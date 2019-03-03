@@ -1,0 +1,93 @@
+<!Doctype html>
+<html>
+<head>
+  <title>DPVTS Dashboard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <!-- main stylesheet-->
+  <link rel="stylesheet" href="css/aboutproject.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="icon" href="images/dashboardlogo2.png">
+  <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('currenttime').innerHTML =today;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    </script>
+</head>
+<body id="body" onload="startTime()">
+
+    <header class="dash-header" >
+
+      <div class="mdl-layout__header-row">
+        <img id="dashboardlogo" class="mdl-layout-icon" src="images/dashboardlogo2.png" alt="DPVTS logo" ></img>
+        <span id="projectname"  class="mdl-layout__title">Disabled Parking Visual Tracking <br>System (DPVTS) Dashboard</span>
+        <div class="mdl-layout-spacer"></div>
+        <div id="currenttime" style="font-size: 16px; font-weight:bold;"></div>
+      </div>
+    </header>
+
+    <div class="control-panel">
+      <h3 class="control-panel-title">Control Panel</h3>
+      <button id="parking_area_image" class=" foe areaIcone"></button>
+      <nav id="generalpage" >
+        <a class="mdl-navigation__link" href="index.html" style="font-weight:bold;font-size:16px;">
+          <button type="button" class=" mdl-js-button mdl-button--raised" style="font-weight:bold;font-size:16px;width:90%">Home</button>
+        </a>
+        <a class="mdl-navigation__link" href="generalparking.html" style="font-weight:bold;font-size:16px;">
+          <br>
+          <button type="button" class=" mdl-js-button mdl-button--raised" style="font-weight:bold;font-size:16px;width:90%">Explore whole parking</button>
+        </a>
+      </nav>
+
+    </div>
+    <div class="about">
+      <p  style="font-size: 20px;font-style: oblique;">
+        This Dashboard System is a contribution to the final year project of:
+
+        <br>
+        <br>student name  : Munaib Sadeq Abdo Ali Alhelali
+        <br>student ID    : 1132702977
+        <br>accademic year: 2018/2019
+        <br>
+        <br>under the suppervision of: Mr. Cheong Soon Nyean
+        <br>
+        <br>This Dashboard aims to give the parking operator an insight into the disabled parking trends and routines.
+        This kind of data enables parking management to make data-driven decisions that helps disabled drivers and provide them with suitable parking services.
+        At the same time, it keeps the parking operator alerted and updated on the parking usage and its revenue.
+
+      </p>
+    </div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAQTmnNS512huD5Z__8Id8TXR6HyVK9B44",
+    authDomain: "pvts-afc67.firebaseapp.com",
+    databaseURL: "https://pvts-afc67.firebaseio.com",
+    projectId: "pvts-afc67",
+    storageBucket: "pvts-afc67.appspot.com",
+    messagingSenderId: "730069168049"
+  };
+  firebase.initializeApp(config);
+</script>
+
+</body>
+</html>

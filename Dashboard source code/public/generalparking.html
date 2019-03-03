@@ -1,0 +1,158 @@
+<!Doctype html>
+<html>
+<head>
+  <title>DPVTS Dashboard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <!-- main stylesheet-->
+  <link rel="stylesheet" href="css/generalview.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="icon" href="images/dashboardlogo2.png">
+  <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('currenttime').innerHTML =today;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAQTmnNS512huD5Z__8Id8TXR6HyVK9B44",
+        authDomain: "pvts-afc67.firebaseapp.com",
+        databaseURL: "https://pvts-afc67.firebaseio.com",
+        projectId: "pvts-afc67",
+        storageBucket: "pvts-afc67.appspot.com",
+        messagingSenderId: "730069168049"
+      };
+    var app=firebase.initializeApp(config);
+    var calledby='non_disabled'
+    </script>
+    <script src="dataGetter.js"></script>
+    <script>
+    //paste this code under the head tag or in a separate js file.
+    // Wait for window load
+    // setTimeout(function () {
+    //     $(".se-pre-con").fadeOut("slow");
+    // }, 8000);
+    $(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+
+    </script>
+
+</head>
+<body id="body" onload="startTime()">
+    <!-- <div class="se-pre-con"></div> -->
+    <header class="dash-header" >
+
+      <div class="mdl-layout__header-row">
+        <img id="dashboardlogo" class="mdl-layout-icon" src="images/dashboardlogo2.png" alt="DPVTS logo" ></img>
+        <span id="projectname"  class="mdl-layout__title">Disabled Parking Visual Tracking <br>System (DPVTS) Dashboard</span>
+        <div class="mdl-layout-spacer"></div>
+        <div id="currenttime" style="font-size: 16px; font-weight:bold;"></div>
+      </div>
+    </header>
+
+    <div class="control-panel">
+      <h3 class="control-panel-title">Control Panel</h3>
+      <button id="parking_area_image" class=" foe areaIcone"></button>
+      <nav id="generalpage" >
+
+        <a class="mdl-navigation__link" href="index.html" >
+          <button type="button" class=" mdl-js-button mdl-button--raised" style="font-weight:bold;font-size:16px;width:90%;">Back to disabled parking</button>
+        </a>
+        <a class="mdl-navigation__link" href="aboutproject.html">
+        <br>  <button type="button" class=" mdl-js-button mdl-button--raised" style="font-weight:bold;font-size:16px;width:90%;">About project</button>
+        </a>
+      </nav>
+        <div class="choose-area-and-timeline">
+          <form name="controlpanel" action="" >
+            <h5>Choose parking area:</h5>
+            <input type="radio" name="parking-area" value="FOE" checked> FOE<br>
+            <input type="radio" name="parking-area" value="FOM"> FOM<br>
+            <input type="radio" name="parking-area" value="FCI"> FCI
+            <h5>View data:</h5>
+            Choose Date:<br>
+            <input type="date" name="choose-date" value="fromDate" ><br>
+            <br><br>View Mode:<br>
+            <input type="radio" name="view-type" value="day" >  Day<br>
+            <input type="radio" name="view-type" value="month" checked>  Month<br>
+            <input type="radio" name="view-type" value="year">  Year<br><br>
+            <input type="button"  value="Submit" onclick="control_panel()" style="width:80%;">
+          </form>
+        </div>
+    </div>
+    <div  class="real-time-info" >
+        <div id= 'parking-left-row' >
+          <!-- Accent-colored raised button with ripple -->
+
+          <button id=1 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised "></button>
+          <button id=2 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=3 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=4 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=5 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=6 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=7 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=8 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=9 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=10 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=11 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=12 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+
+        </div>
+        <div id='parking-right-row'>
+          <button id=13 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"
+          style="background-image:url(images/handicap.png);background-size: 80px 80px;background-repeat: no-repeat;background-position: center top;">
+            <!-- <img src="images/handicap.png" alt="disabled icon" style="height:50px; width:50px;align:center;"> -->
+            <label id="disp1"></label>
+          </button>
+          <button id=14 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"
+          style="background-image:url(images/handicap.png);background-size: 80px 80px;background-repeat: no-repeat;background-position: center top;">
+            <!-- <img src="images/handicap.png" alt="disabled icon" style="height:50px; width:50px;align:center;"> -->
+            <label id="disp2"></button>
+          <button id=15 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=16 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=17 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=18 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+
+        </div>
+    </div>
+
+
+    <div class="occupancy-rate-graph" style="background-color: white;">
+        <canvas id="my-occupancy-Chart"  height="100" ></canvas>
+     </div>
+
+    <div class="average-occupancy-duration" style="background-color: white;">
+      <canvas id="average-parking-time-chart"  height="200" ></canvas>
+    </div>
+
+    <div class="revenue-graph" style="background-color: white; ">
+      <canvas id="my-revenue-Chart"  height="200" ></canvas>
+    </div>
+    <script src="general-graphs.js" charset="utf-8"></script>
+
+    <!-- <footer class="dash-footer">FOOTER </footer> -->
+
+<script src="generalparking.js"></script>
+
+</body>
+</html>

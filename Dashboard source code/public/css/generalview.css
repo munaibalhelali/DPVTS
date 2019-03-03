@@ -1,0 +1,249 @@
+body{
+  display: grid;
+  grid-template-columns: 15% 40% 40%;
+  grid-auto-rows: 100px 400px auto auto 100px;
+  grid-template-areas:    "cpanel header          header "
+                          "cpanel RTData          RTData "
+                          "cpanel averageDuration RevenueData "
+                          "cpanel usageData       usageData"
+                          "cpanel footer          footer ";
+  margin: : 20px;
+  grid-gap:10px;
+  padding: 20px;
+  background-color: orange;
+
+}
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript,
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../images/loader-64x/Preloader_3.gif) center no-repeat #fff;
+}
+
+.dash-header{
+  grid-area: header;
+  grid-template-columns: auto auto auto ;
+  grid-template-rows: auto auto;
+  grid-template-areas: "icon projectname time"
+                        "icon projectname  ";
+  /* background: url(../images/foe.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+
+}
+
+#dashboardlogo{
+  grid.area:icon;
+  object-fit: cover;
+  width: inherit;
+  max-height: 100px;
+}
+#projectname{
+  grid.area:projectname;
+  font-size: 25px;
+  font-family: serif;
+  font-style: oblique;
+  font-weight: bold;
+  color: black;
+}
+#currenttime{
+  grid.area:time;
+}
+
+
+.control-panel{
+  grid-area:cpanel;
+  border-right: solid;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 200px 100px 100px 400px ;
+  grid-template-areas: "area-Icone"
+                        "title"
+                        "generalpage"
+                        "choose-area";
+
+}
+.control-panel-title{
+  grid-area: title;
+
+}
+.areaIcone{
+  grid-area: area-Icone;
+
+}
+#generalpage{
+grid-area:generalpage;
+}
+.choose-area-and-timeline{
+  grid-area:choose-area;
+}
+
+.refresh-button{
+  grid-area: button;
+  align-self: center;
+}
+.real-time-info{
+  grid-area:RTData;
+  border: solid;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 35% 30% 35%;
+  grid-template-areas: "left-row"
+                        "."
+                        "right-row";
+  /* background-color: blue; */
+  background: url(../images/foe_background_parking.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
+.occupancy-rate-graph{
+  grid-area:usageData;
+  border: solid;
+  align-items: stretch;
+  /* background: url(../images/line_graph.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+
+}
+.average-occupancy-duration{
+  grid-area:averageDuration;
+  border: solid;
+  /* background: url(../images/pie_graph.png);
+  background-size: contain;
+  background-repeat: no-repeat; */
+
+}
+.revenue-graph{
+  grid-area:RevenueData;
+  border: solid;
+  align-content: center;
+  /* background: url(../images/bar-graph.png);
+  background-size: stretch;
+  background-repeat: no-repeat; */
+
+}
+.dash-footer{
+  grid-area:footer;
+  border: solid;
+  background-color:brown;
+}
+
+.demo-image{
+  width:auto;
+  height:auto;
+}
+.foe{
+  background: url(../images/foe_image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:200px;
+  height:200px;
+  border-width: thick;
+}
+.foebody{
+background-color: orange;
+}
+.fom{
+  background: url(../images/fom-mmu.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:200px;
+  height:200px;
+  border-width: thick;
+}
+.fombody{
+background-color: red;
+}
+.fci{
+  background: url(../images/fci-mmu.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:200px;
+  height:200px;
+  border-width: thick;
+}
+.fcibody{
+background-color: green;
+}
+#parking-left-row{
+  grid-area: left-row;
+  display:grid;
+  grid-template-columns: repeat(13,8%);
+  grid-auto-rows: 100%;
+  grid-column-gap: 3px;
+  align-items: stretch;
+}
+#parking-right-row{
+  grid-area: right-row;
+  display:grid;
+  grid-template-columns: 12% 12% repeat(4,8%);
+  grid-template-rows: 100%;
+  grid-column-gap:5px;
+  justify-content: right;
+  /* justify-content: center; */
+}
+
+#real-info{
+  width:200px;
+  height:200px;
+
+}
+
+#pathwayButn{
+  background-color: transparent; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 200px;
+  width:1395px;
+}
+#maindash{
+  background: url(../images/foeparkingmap.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+
+.available{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  padding: 5px 5px;
+  margin:10px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5%;
+
+
+}
+.occupied{
+  margin: 10px;
+  background-color: red;
+  border: none;
+  padding: 5px 5px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5%;
+}
+.inbutton{
+  position: relative;
+}

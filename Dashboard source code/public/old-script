@@ -1,0 +1,137 @@
+<!Doctype html>
+<html>
+<head>
+  <title>DPVTS Dashboard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <!-- main stylesheet-->
+  <link rel="stylesheet" href="css/master.css"/>
+  <script>
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =today;
+      var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+    </script>
+</head>
+<body onload="startTime()">
+  <div class='main-div'>
+    <header  class=" dash-header mdl-layout__header mdl-layout__header--scroll">
+      <img class="mdl-layout-icon"></img>
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout__title">Disabled Parking Visual Tracking System (DPVTS) Dashboard</span>
+        <div class="mdl-layout-spacer"></div>
+        <div id="txt"></div>
+
+
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="#">Home</a>
+          <a class="mdl-navigation__link" href="#">About project</a>
+
+        </nav>
+
+      </div>
+    </header>
+
+    <div id='real-time-data' class="mdl-layout mdl-js-layout">
+
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout__title">Material Design Lite</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="#">Hello</a>
+          <a class="mdl-navigation__link" href="#">World.</a>
+          <a class="mdl-navigation__link" href="#">How</a>
+          <a class="mdl-navigation__link" href="#">Are</a>
+          <a class="mdl-navigation__link" href="#">You?</a>
+        </nav>
+      </div>
+      <main id='maindash'style='background-color:white'class="mdl-layout__content">
+        <div id= 'parking-left-row' >
+          <!-- Accent-colored raised button with ripple -->
+          <button style="height:200px;width:100;background:transparent;"  class=" mdl-button mdl-js-button ">
+
+          </button>
+          <button id=1 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised "></button>
+          <button id=2 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=3 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=4 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=5 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=6 onclick="showCounter(this.id)"  class="available mdl-js-button mdl-button--raised"></button>
+          <button id=7 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=8 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=9 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=10 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=11 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=12 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+
+        </div>
+        <div >
+
+          <button id="pathwayButn"  class="mdl-button mdl-js-button" >
+            <img src="images/arrow1.png" alt="arrow icon" style="height:100px; width:100px;">
+            <img src="images/arrow1.png" alt="arrow icon" style="height:100px; width:100px;">
+            <img src="images/arrow1.png" alt="arrow icon" style="height:100px; width:100px;">
+            <img src="images/arrow1.png" alt="arrow icon" style="height:100px; width:100px;">
+            <img src="images/arrow1.png" alt="arrow icon" style="height:100px; width:100px;">
+            <img src="images/arrow1.png" alt="arrow icon" style="height:100px; width:100px;">
+            <img src="images/arrow1.png" alt="arrow icon" style="height:100px; width:100px;">
+            <img src="images/arrow1.png" alt="arrow icon" style="height:100px; width:100px;">
+            <img src="images/arrow1.png" alt="arrow icon" style="height:100px; width:100px;">
+          </button>
+        </div>
+        <div id='parking-right-row'>
+          <button style="height:200px;width:200px;background:transparent;font-size: 28px;"  class="mdl-button mdl-js-button">
+          </button>
+
+          <button id=13 style="width:200px;" onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised">
+            <img src="images/handicap.png" alt="disabled icon" style="height:150px; width:150px;">
+            <div>
+              <label id="disp1"></label>
+            </div>
+          </button>
+          <button id=14 style="width:200px" onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised">
+            <img src="images/handicap.png" alt="disabled icon" style="height:150px; width:150px;">
+            <div>
+              <label id="disp2"></label>
+            </div>
+          </button>
+          <button id=15 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=16 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=17 onclick="showCounter(this.id)" class="available mdl-js-button mdl-button--raised"></button>
+          <button id=18 onclick="showCounter(this.id)"  class="available mdl-js-button mdl-button--raised"></button>
+          <button style="height:200px;width:200px;background:transparent;font-size: 28px;"class="mdl-button mdl-js-button">
+            <img src="images/arrow1down.png" alt="disabled icon" style="height:100px; width:100px;">
+            <img src="images/arrow1down.png" alt="disabled icon" style="height:100px; width:100px;">
+          </button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAQTmnNS512huD5Z__8Id8TXR6HyVK9B44",
+    authDomain: "pvts-afc67.firebaseapp.com",
+    databaseURL: "https://pvts-afc67.firebaseio.com",
+    projectId: "pvts-afc67",
+    storageBucket: "pvts-afc67.appspot.com",
+    messagingSenderId: "730069168049"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="index.js"></script>
+
+</body>
+</html>

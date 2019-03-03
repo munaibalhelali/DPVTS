@@ -1,0 +1,186 @@
+body{
+  display: grid;
+  grid-template-columns: 15% auto;
+  grid-auto-rows: 100px auto 100px;
+  grid-template-areas:    "cpanel   header "
+                          "cpanel   about  "
+                          "cpanel   footer ";
+  margin: : 20px;
+  grid-gap:10px;
+  padding: 20px;
+  background-color: orange;
+
+}
+.dash-header{
+  grid-area: header;
+  grid-template-columns: auto auto auto ;
+  grid-template-rows: auto auto;
+  grid-template-areas: "icon projectname time"
+                        "icon projectname  ";
+  /* background: url(../images/foe.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+
+}
+.about{
+  grid-area=about;
+}
+#dashboardlogo{
+  grid.area:icon;
+  object-fit: cover;
+  width: inherit;
+  max-height: 100px;
+}
+#projectname{
+  grid.area:projectname;
+  font-size: 25px;
+  font-family: serif;
+  font-style: oblique;
+  font-weight: bold;
+  color: black;
+}
+#currenttime{
+  grid.area:time;
+}
+
+
+.control-panel{
+  grid-area:cpanel;
+  border-right: solid;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 200px 100px 100px 400px ;
+  grid-template-areas: "area-Icone"
+                        "title"
+                        "generalpage"
+                        "choose-area";
+
+}
+.control-panel-title{
+  grid-area: title;
+
+}
+.areaIcone{
+  grid-area: area-Icone;
+
+}
+#generalpage{
+grid-area:generalpage;
+}
+.choose-area-and-timeline{
+  grid-area:choose-area;
+}
+
+
+.dash-footer{
+  grid-area:footer;
+  border: solid;
+  background-color:brown;
+}
+
+
+.foe{
+  background: url(../images/foe_image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:200px;
+  height:200px;
+  border-width: thick;
+}
+.foebody{
+background-color: orange;
+}
+.fom{
+  background: url(../images/fom-mmu.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:200px;
+  height:200px;
+  border-width: thick;
+}
+.fombody{
+background-color: red;
+}
+.fci{
+  background: url(../images/fci-mmu.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:200px;
+  height:200px;
+  border-width: thick;
+}
+.fcibody{
+background-color: green;
+}
+#parking-left-row{
+  grid-area: left-row;
+  display:grid;
+  grid-template-columns: repeat(13,8%);
+  grid-auto-rows: 100%;
+  grid-column-gap: 3px;
+  align-items: stretch;
+}
+#parking-right-row{
+  grid-area: right-row;
+  display:grid;
+  grid-template-columns: 15% 15% repeat(4,8%);
+  grid-template-rows: 100%;
+  grid-column-gap:5px;
+  justify-content: right;
+  /* justify-content: center; */
+}
+
+#real-info{
+  width:200px;
+  height:200px;
+
+}
+
+#pathwayButn{
+  background-color: transparent; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 200px;
+  width:1395px;
+}
+#maindash{
+  background: url(../images/foeparkingmap.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+
+.available{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  padding: 5px 5px;
+  margin:10px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5%;
+
+
+}
+.occupied{
+  margin: 10px;
+  background-color: red;
+  border: none;
+  padding: 5px 5px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5%;
+}
+.inbutton{
+  position: relative;
+}
