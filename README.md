@@ -21,5 +21,5 @@ This is the source code of the DPVTS project. It is a thesis project for electro
 - Numpy 
 - Firebase database
 - LoRA
-- Raspbarry Pi3
-- Arduino
+- Raspberry Pi3
+- Arduino UNO
