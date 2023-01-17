@@ -2,7 +2,7 @@
 
 ![system architecture](images/system_architecture.png)
 
-This is the source code of the DPVTS project. It is a thesis project for electronics engineering bachelor degree at Multimedia University, Cyberjaya, Malaysia. The system architecture is as shown above. The RNN training and Driver app are a complementary elements that are developed by other coleages while all of the other elements developed in this project.
+This is the source code of the DPVTS project. It is a thesis project for electronics engineering bachelor degree at Multimedia University, Cyberjaya, Malaysia. The system architecture is as shown above. The RNN training and Driver app are a complementary elements that are developed by other coleages while all of the other elements are developed in this project.
 
 ## Developed by: Munaib Al-Helali
 ## Supervised by: Cheong Soon Nyean
