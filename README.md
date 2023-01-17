@@ -9,16 +9,24 @@ This is the source code of the DPVTS project. It is a thesis project for electro
 ## Year: 2019
 
 ## The project consists of three parts: 
-- Base station: is a Raspberry Pi3 based station to detect and track cars in the parking area and update the parking lots status accordingly. The parking area is divided into different zones as follows:
+### Base station: 
+is a Raspberry Pi3 based station to detect and track cars in the parking area and update the parking lots status accordingly. The parking area is divided into different zones as follows:
+
 ![parking_zones](images/parking_zones.png)
+
  The following images explain the state machine used to track the status of the parking lots:
+ 
 ![state_machine](images/state_machine.png)
 ![state_machine_description](images/state_machine_description.png)
 
-- Dashboard: is a web dashboard to visualize and track the parking trends in the parking area over time.
+### Dashboard: 
+is a web dashboard to visualize and track the parking trends in the parking area over time.
+
 ![dashboard](images/dashboard_implementation.png)
 
-- Barricade: is a device based on arduino. It is installed at the center of earch parking lot and can be controled through a dedicated android application or through the base station. It communicate with the base station through LoRa module over long distance.
+### Barricade: 
+is a device based on arduino. It is installed at the center of earch parking lot and can be controled through a dedicated android application or through the base station. It communicate with the base station through LoRa module over long distance.
+
 ![barricade](images/barricade_implementation.png)
 
 ## Programming languages used:
