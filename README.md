@@ -8,6 +8,19 @@ This is the source code of the DPVTS project. It is a thesis project for electro
 ## Supervised by: Cheong Soon Nyean
 ## Year: 2019
 
+## Programming languages used:
+- Python: base station
+- C++: barricade
+- HTML, CSS, JavaScript: web dashboard
+
+## Other technologies or libraries:
+- OpenCV
+- Numpy 
+- Firebase database
+- LoRA
+- Raspberry Pi3
+- Arduino UNO
+
 ## The project consists of three parts: 
 ### Base station: 
 is a Raspberry Pi3 based station to detect and track cars in the parking area and update the parking lots status accordingly. The parking area is divided into different zones as follows:
@@ -29,15 +42,7 @@ is a device based on arduino. It is installed at the center of earch parking lot
 
 ![barricade](images/barricade_implementation.png)
 
-## Programming languages used:
-- Python: base station
-- C++: barricade
-- HTML, CSS, JavaScript: web dashboard
+## Evaluation
+![evaluation](images/evaluation.png)
 
-## Other technologies or libraries:
-- OpenCV
-- Numpy 
-- Firebase database
-- LoRA
-- Raspberry Pi3
-- Arduino UNO
+
