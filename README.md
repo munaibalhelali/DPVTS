@@ -23,7 +23,7 @@ This is the source code of the DPVTS project. It is a thesis project for electro
 - LoRA
 - Raspberry Pi3
 - Arduino UNO
-
+## Related publication: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9214659&isnumber=9214582
 ## The project consists of three parts: 
 ### Base station: 
 is a Raspberry Pi3 based station to detect and track cars in the parking area and update the parking lots status accordingly. The parking area is divided into different zones as follows:
